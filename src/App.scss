@@ -1,0 +1,101 @@
+.controls {
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+  gap            : 0.5em;
+  margin-top     : 10px;
+  margin-bottom  : 10px;
+}
+
+.grid {
+  display              : grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows   : repeat(4, 1fr);
+  position             : relative;
+  width                : 100%;
+  max-width            : 1024px;
+  aspect-ratio         : 1.33;
+  border               : 3px solid #fff;
+
+  ::view-transition-group(*.item) {
+    animation-duration       : 1s;
+    animation-timing-function: cubic-bezier(1, -0.62, 0.61, 1.37)
+  }
+
+  .item {
+    overflow             : hidden;
+    view-transition-class: item;
+
+    video {
+      width     : 400%;
+      height    : 400%;
+      object-fit: cover;
+      position  : relative;
+    }
+
+    /* Clip the different portions for each cell (4x4 grid) */
+    &.item0 video {
+      translate: 0% 0%;
+    }
+
+    &.item1 video {
+      translate: -25% 0%;
+    }
+
+    &.item2 video {
+      translate: -50% 0%;
+    }
+
+    &.item3 video {
+      translate: -75% 0%;
+    }
+
+    &.item4 video {
+      translate: 0% -25%;
+    }
+
+    &.item5 video {
+      translate: -25% -25%;
+    }
+
+    &.item6 video {
+      translate: -50% -25%;
+    }
+
+    &.item7 video {
+      translate: -75% -25%;
+    }
+
+    &.item8 video {
+      translate: 0% -50%;
+    }
+
+    &.item9 video {
+      translate: -25% -50%;
+    }
+
+    &.item10 video {
+      translate: -50% -50%;
+    }
+
+    &.item11 video {
+      translate: -75% -50%;
+    }
+
+    &.item12 video {
+      translate: 0% -75%;
+    }
+
+    &.item13 video {
+      translate: -25% -75%;
+    }
+
+    &.item14 video {
+      translate: -50% -75%;
+    }
+
+    &.item15 video {
+      translate: -75% -75%;
+    }
+  }
+}
